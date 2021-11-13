@@ -11,7 +11,7 @@ class NavBarSimple extends React.Component {
         };
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState((prevState, prevProps) => ({
             message: prevState.loggedIn ? "F. U." : "Welcome, user",
             action: prevState.loggedIn ? "log in": "log out",
@@ -24,7 +24,7 @@ class NavBarSimple extends React.Component {
             <div className = {css.NavBar}>
                 <h1></h1>
                 <span>{this.state.message}</span>
-                <button onClick = {() => this.handleClick()}>{this.state.action}</button>
+                <button onClick = {this.handleClick}>{this.state.action}</button>
             </div>
         )
     }
